@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<title>Sign In</title>
+		<% include ./partials/head %>
+	</head>
+	<body>
+	   <!-- nav bar starts here -->
+	    <% include ./partials/header_signin %>
+	   <!-- nav bar ends here -->
+	  
+	    <div class="container-fluid sign-up-bg_img">
+		  <!-- left-side ad div -->
+		    <div class="col-sm-3 col-md-4 ad-space-bg">
+			    <div class="ad-space-left">
+			      <img src="./img/ad2.png" class="img-responsive ad-left">
+				</div>
+			</div>  <!-- ad-space-bg -->
+	        
+			<div class="col-sm-6 col-md-4 col-xs-12 sign-up-bg">
+			  <!-- top-side ad div -->
+			    <div class="ad-space-top">
+			        <img src="./img/ad1.png" class="img-responsive ad-top">
+				</div>
+		      <!-- form starts here -->	
+			   <form class="sign-up-form-bg">
+				    <h3>Instant Sign In</h3>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address*">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+					<p>Forgot Password ?</p>
+					
+					<!-- <button type="button" class="btn login-button">Login</button>  -->
+					<a href="/2" class="orange-btn"><i class="fa fa-sign-in"></i>&nbsp; Login</a>
+					<p>New user sign up now!</p>
+			    </form>
+			</div>  <!-- sign-up-bg -->
+	      
+		  <!-- right-side ad div -->
+			<div class="col-sm-3 col-md-4 ad-space-bg">
+			    <div class="ad-space-right">
+			      <img src="./img/ad4.png" class="img-responsive ad-right">
+				</div>
+			</div>
+		  
+		  <!-- bottom-side ad div -->
+			<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+			    <div class="ad-space-bottom">
+			      <img src="./img/ad3.png" class="img-responsive ad-bottom">
+				</div>
+			</div>
+		
+		</div> <!-- container-fluid -->
+	  
+		<% include ./partials/footer %>
+	</body>
+</html>

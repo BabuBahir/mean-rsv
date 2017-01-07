@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<title>Select Building Type</title>
+		 <% include ./partials/head %>
+	</head>
+	<body>
+	   <!-- nav bar starts here -->
+	    <% include ./partials/header %>
+	   <!-- nav bar ends here -->
+	  
+	    <div class="container-fluid sign-up-bg_img">
+		  
+	        <div class="col-sm-10 col-sm-offset-1">
+			    
+				<div class="row">
+				    <div class="col-sm-6 col-sm-offset-3">
+					  <!-- top-side ad div -->
+				        <div class="ad-space-top">
+			                <img src="./img/ad1.png" class="img-responsive ad-top" style="margin-bottom:10px">
+						</div>
+				    </div> <!-- col-sm-6 -->
+				</div> <!-- row -->
+				
+				<h3 class="select-building-type">Select your Building Type</h3>
+				
+				<div class="row" style="margin:0; background:#f5f5f5; padding-bottom:20px;">
+				    
+					<div class="col-sm-12">	
+					    
+						<div id="gallerly">   <!-- note: gallerly plugin has not been used  -->
+                            
+							<div class="image-viewer">
+							    
+								<a class="thumbnail">
+                                    <img src="./img/image-1.png" data-title="Image Name" data-description="<span>Desription:</span> Lorem Ipsum ..." />
+									<div class="desc">RCC
+							            <button type="button" class="btn btn-xs read-more">Read More &nbsp; <i class="fa fa-caret-right"></i></button>
+							        </div>  <!-- desc -->
+                                </a>
+								
+								<a class="thumbnail">
+                                    <img src="./img/image-2.png" data-title="Image Name" data-description="<span>Desription:</span> Lorem Ipsum ..." />
+									<div class="desc">RCC
+							            <button type="button" class="btn btn-xs read-more">Read More &nbsp; <i class="fa fa-caret-right"></i></button>
+							        </div>  <!-- desc -->
+                                </a>
+								
+                                <a class="thumbnail">
+                                    <img src="./img/image-3.png" data-title="Image Name" data-description="<span>Desription:</span> Lorem Ipsum ..." />
+									<div class="desc">Steel
+							            <button type="button" class="btn btn-xs read-more">Read More &nbsp; <i class="fa fa-caret-right"></i></button>
+							        </div>  <!-- desc -->
+                                </a>
+								
+								<a class="thumbnail">
+                                    <img src="./img/image-4.png" data-title="Image Name" data-description="<span>Desription:</span> Lorem Ipsum ..."/>
+									<div class="desc">Composite
+							            <button type="button" class="btn btn-xs read-more">Read More &nbsp; <i class="fa fa-caret-right"></i></button>
+							        </div>  <!-- desc -->
+                                </a>
+								
+							</div>  <!-- image-viewer  -->
+					    
+						</div> <!-- #gallerly  --> 
+					
+					</div> <!-- col-sm-12 -->
+				  
+				</div>  <!-- row --->
+				
+				<div class="row">
+				    <div class="col-sm-6 col-sm-offset-3">
+					  <!-- bottom-side ad div -->
+				        <div class="ad-space-top">
+			                <img src="./img/ad3.png" class="img-responsive ad-bottom" style="margin:20px auto;">
+						</div>
+				    </div> <!-- col-sm-6 -->
+				</div> <!-- row -->
+			
+			</div>  <!-- col-sm-10 -->
+		
+		</div> <!-- container-fluid -->
+	  
+	   <% include ./partials/footer %>
+		<script src="js/gallerly.js"></script> 		
+        <script>
+		    var $gallerly = document.querySelector("#gallerly");
+            var gallerly = new Gallerly($gallerly);
+		</script>   
+		<script>
+		    $(document).ready(function(){
+                $(".thumbnail").hover(function(){ 
+				    $(this).find(".desc").toggleClass("onhover-toggle");
+				});
+			
+            });
+			
+		</script>		
+	
+	</body>
+</html>
