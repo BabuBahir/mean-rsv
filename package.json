@@ -2,12 +2,19 @@
   "name": "Node-Express4-Session",
   "version": "0.0.1",
   "main": "server.js",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon server.js"
+  },
+
   "dependencies": {
     "bcrypt": "^1.0.2",
     "body-parser": "^1.7.0",
     "ejs": "^1.0.0",
     "express": "^4.14.0",
     "express-session": "^1.7.6",
-    "mongoose": "^4.7.6"
+    "mongoose": "^4.7.6",
+    "nodemon": "^1.11.0"
   }
 }

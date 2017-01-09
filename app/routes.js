@@ -27,16 +27,31 @@ module.exports = function(app) {
     app.get('/addpicture', function(req, res) {
         res.render('add_Picture.html');
     });
+
     app.get('/showform', function(req, res) {
         res.render('general_Info-Form.html');
     });
 
+    app.get('/buildingType',function(req,res){
+        res.render('building_Type _Configuration.html');
+    });
+
+    app.post('/test',function(req,res){
+        console.log(req.body);
+        res.send('GOOD');
+    });
     //---some post 
 
     app.post('/login', function(req, res) {
         sess = req.session;
         sess.email = req.body.email;
         res.end('done');
+    });
+
+    app.post('/', function(req, res) {
+        console.log(req.body.user.name);
+        console.log(req.body.user.email);  
+        res.send('done');       
     });
 
     app.get('/admin', function(req, res) {
