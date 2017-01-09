@@ -3,6 +3,7 @@
  var bodyParser = require('body-parser');
  var app = express();
  var mongoose = require('mongoose');
+ var bcrypt = require('bcrypt');
 
  mongoose.Promise = global.Promise;
  mongoose.connect('mongodb://test:test@ds157248.mlab.com:57248/rvs');
@@ -12,23 +13,11 @@
 
      var Admin = require("./app/models/admin.js");
 
-     //create new model
-     var post = new Admin({
-         name: "Admin 001",
-         email: "rohit.logicsquare@gmail.com",
-         phone: "8260164852",
-         password : "papa",
-         profilePicUrl : "https://tinyimg9034.com"
-     });
-
-     //save model to MongoDB
-     post.save(function(err) {
-         if (err) {
-             return err;
-         } else {
-             console.log("Post saved");
-         }
-     });
+     Admin.find({}, function(err, Admin) {
+  			if (err) throw err;
+  			// object of all the users
+  			console.log(Admin);
+		});
 
  });
 
