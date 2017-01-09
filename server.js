@@ -3,7 +3,6 @@
  var bodyParser = require('body-parser');
  var app = express();
  var mongoose = require('mongoose');
- var bcrypt = require('bcrypt');
 
  mongoose.Promise = global.Promise;
  mongoose.connect('mongodb://test:test@ds157248.mlab.com:57248/rvs');
@@ -11,14 +10,25 @@
  mongoose.connection.once('connected', function() {
      console.log("Connected to MongoLab")
 
-     var Admin = require("./app/models/admin.js");
+     var Admin = require("./models/admin.js");
 
-     Admin.find({}, function(err, Admin) {
-  			if (err) throw err;
-  			// object of all the users
-  			console.log(Admin);
+		 var testUser = new Admin({
+			name: 'jmar777',
+			password: 'test',
+			email : 'rohit.logicsquare@gmail.com',
+			phone : '88459959*',
+			profilePicUrl : 'https://tinypicurl23.com'
 		});
 
+		// save user to database
+		testUser.save(function (err) {
+				if (err) {
+					return err;
+				}
+				else {
+					console.log("Post saved");
+				}
+			});
  });
 
 
