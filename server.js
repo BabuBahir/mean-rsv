@@ -9,33 +9,17 @@
   
  mongoose.connection.once('connected', function() {
      console.log("Connected to MongoLab")
+     var buildingType = require("./models/buildingType.js");
 
-     var Admin = require("./models/admin.js");
-
-		 var testUser = new Admin({
-			name: 'jmar777',
-			password: 'test',
-			email : 'rohit.logicsquare@gmail.com',
-			phone : '88459959*',
-			profilePicUrl : 'https://tinypicurl23.com'
-		});
-
-		// save user to database
-		// testUser.save(function (err) {
-		// 		if (err) {
-		// 			return err;
-		// 		}
-		// 		else {
-		// 			console.log("Post saved");
-		// 		}
-		// 	});
+	 buildingType.find({}, function(err, data){	 	    
+			var drinks = data;
+			app.set('drinks', drinks);       
+    });
  });
-
-
-
 
  app.set('views', __dirname + '/views');
  app.engine('html', require('ejs').renderFile);
+ app.set('view engine', 'ejs');
 
  app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
  app.use(bodyParser.json());
