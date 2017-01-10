@@ -1,3 +1,7 @@
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+var controller = require('./controller');
+
 module.exports = function(app) {
 
     app.get('/', function(req, res) {
@@ -35,10 +39,13 @@ module.exports = function(app) {
     app.get('/buildingType',function(req,res){
         var buildingType = require("../models/buildingType.js");
 
-        buildingType.find({}, function(err, data){                    
+        buildingType.find({}, function(err, data){            
+          console.log(data);        
           res.render('building_Type _Configuration',{drinks:data[0].name});                     
         });        
     });
+
+    app.get('/cloudinaryTest',controller.index);
 
     //---some post 
 

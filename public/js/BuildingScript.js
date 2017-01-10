@@ -1,13 +1,12 @@
 angular.module('BuildingApp',[])
-    .controller('MainCtrl', function ($scope,$http,$document) {
+    .controller('MainCtrl',function ($scope,$http,$document) {
  
  	//setting values from mongo ejs
  	$scope.masonaryNameGJ =($document[0].getElementById('gjName').value);
  	$scope.masonaryNameEN =($document[0].getElementById('enName').value);
  	$scope.masonaryNameHI =($document[0].getElementById('hiName').value);
 
-	$scope.form_validate =function(){
-		console.log($scope.masonaryNameEN);
+	$scope.form_validate =function(){		 
 		$http({
 		method : "POST",
 		url : "/test" ,
