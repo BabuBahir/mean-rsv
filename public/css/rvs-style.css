@@ -756,6 +756,111 @@ toggle {  0% {
   
 .page-header-wrap h3 { color: #333; font-weight: 900; display: inline-block; line-height:1.2 }
 
+/* added 10th Jan 2017 */
+
+.btn-is-green  {
+  position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: #5cb85c;
+    font-weight: 700;
+    font-size:16px;
+  display:inline-block;
+    padding: 8px 20px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 20px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 20px rgba(0,0,0,.8);
+    box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 20px rgba(0,0,0,.8);
+    margin:15px auto;
+  
+  text-align: center;
+  
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.btn-is-green:hover  {
+  color:#fff;
+  text-decoration:none;
+}
+
+.btn-is-green:hover   {
+  -webkit-box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 25px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 25px rgba(0,0,0,.8);
+    box-shadow: 0px 7px 0px rgba(93,176,22,.9), 0px 9px 25px rgba(0,0,0,.8);
+}
+
+.btn-is-green:focus {
+  outline:none; color:#fff; text-decoration:none;
+}
+
+.btn-is-green:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+  color:#fff;
+    text-decoration:none;
+}
+
+.small-btn-is-green  {
+  position: relative;
+    color: #fff;
+    text-decoration: none;
+    background-color: #5cb85c;
+    -webkit-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
+    box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
+    margin:8px auto;
+  padding:2px 6px;
+  text-align: center;
+  font-size:12px;
+  -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+}
+
+.small-btn-is-green:hover  {
+  color:#fff;
+  text-decoration:none;
+}
+
+.small-btn-is-green:hover   {
+  -webkit-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 9px 16px rgba(0,0,0,.8);
+    -moz-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 9px 16px rgba(0,0,0,.8);
+    box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 9px 16px rgba(0,0,0,.8);
+}
+
+.small-btn-is-green:focus {
+  outline:none; color:#fff;
+}
+
+.small-btn-is-green:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(93,176,22,.8), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+  color:#fff;
+    text-decoration:none;
+}
+
+.save-contd-btn   {
+   margin:25px auto; 
+}
+
+
 
 /**** media styles starts here ****/
 
