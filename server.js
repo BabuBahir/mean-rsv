@@ -8,13 +8,7 @@
  mongoose.connect('mongodb://test:test@ds157248.mlab.com:57248/rvs');
   
  mongoose.connection.once('connected', function() {
-     console.log("Connected to MongoLab")
-     var buildingType = require("./models/buildingType.js");
-
-	 buildingType.find({}, function(err, data){	 	    
-			var drinks = data;
-			app.set('drinks', drinks);       
-    });
+     console.log("Connected to MongoLab");   
  });
 
  app.set('views', __dirname + '/views');

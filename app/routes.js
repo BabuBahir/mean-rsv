@@ -33,20 +33,25 @@ module.exports = function(app) {
     });
 
     app.get('/buildingType',function(req,res){
-        var data = req.app.get('drinks');     
-        console.log(data[0].name); 
-        res.render('building_Type _Configuration',{drinks:data[0].name});
+        var buildingType = require("../models/buildingType.js");
+
+        buildingType.find({}, function(err, data){                    
+          res.render('building_Type _Configuration',{drinks:data[0].name});                     
+        });        
     });
 
     //---some post 
 
-    app.post('/test',function(req,res){
-        console.log(req.body);
+    app.post('/test',function(req,res){         
         var buildingType = require("../models/buildingType.js");
 
         var testBuilding = new buildingType({
             name: {"Hindi":req.body["NameHI"],"English":req.body["NameEN"],"Gujarati":req.body["NameGJ"]},
             description : {"Hindi":"Dxyz", "English":"Deng"} 
+        });
+
+        //remove user
+        buildingType.remove(function(err,removed) {             
         });
 
         // save user to database
