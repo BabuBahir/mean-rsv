@@ -1,5 +1,6 @@
 var cloudinary = require('cloudinary');
 var Model = require('./model');
+var buildingType = require("../models/buildingType.js");
 
 cloudinary.config({
     cloud_name: 'dcu5hz0re',
@@ -14,12 +15,29 @@ module.exports = {
       Model.find({}, function (err, posts) {           
           if(err) res.send(err);          
           dummyData=posts;                             
-      });
-      var buildingType = require("../models/buildingType.js");
+      });      
 
       buildingType.find({}, function(err, data){                  
         res.render('building_Type _coudinary',{drinks:data[0].name, posts:dummyData});                     
       });        
   },
+  create: function (req, res) {     
+     cloudinary.v2.uploader.upload(req.files.image.path,
+          { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
+          function(err, result) {
+              console.log(result);
+              var post = new Model({                  
+                  created_at: new Date(),
+                  image: result.url,
+                  image_id: result.public_id
+              });
 
+              post.save(function (err) {
+                  if(err){
+                      res.send(err)
+                  }
+                  res.redirect('/cloudinaryTest');
+              });
+      });
+   },
 };

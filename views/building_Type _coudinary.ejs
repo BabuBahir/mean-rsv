@@ -4,7 +4,8 @@
         <title>Building Type Configuration cloudinary</title>        
         <% include ./partials/head %>         
     </head>
-    <body ng-controller="MainCtrl">      
+    <body ng-controller="MainCtrl">    
+    <form action="/create" method="post" enctype="multipart/form-data">
        <!-- nav bar starts here -->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -152,7 +153,7 @@
                                                         <div class="upload-files">
                                                             <div class="upload-wrapper">
                                                                 <label class="" for="my-file-selector">
-                                                                    <input id="my-file-selector" type="file" style="display:none;">
+                                                                    <input name="image" type="file" >
                                                                     <i class="fa fa-plus"></i>
                                                                 </label>
                                                             </div> <!-- upload-wrapper -->
@@ -251,8 +252,8 @@
                                 
                                 <div class="col-sm-12 text-center">
                                     
-                                    <a href="javascript:void(0);" ng-click="form_validate()" class="orange-btn">Save</a>
-                                    
+                                    <button ng-click="form_validate()" type="submit" class="orange-btn">Save</button>
+</form>
                                 </div>
                             
                             </div> <!--  #masonary -->

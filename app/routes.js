@@ -48,7 +48,8 @@ module.exports = function(app) {
     app.get('/cloudinaryTest',controller.index);
 
     //---some post 
-
+    app.post('/create', multipartMiddleware, controller.create);
+    
     app.post('/test',function(req,res){         
         var buildingType = require("../models/buildingType.js");
 

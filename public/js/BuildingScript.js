@@ -6,7 +6,8 @@ angular.module('BuildingApp',[])
  	$scope.masonaryNameEN =($document[0].getElementById('enName').value);
  	$scope.masonaryNameHI =($document[0].getElementById('hiName').value);
 
-	$scope.form_validate =function(){		 
+	$scope.form_validate =function(){
+	    	 
 		$http({
 		method : "POST",
 		url : "/test" ,
