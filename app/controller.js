@@ -14,7 +14,7 @@ module.exports = {
   index: function (req, res) {
       Model.find({}, function (err, posts) {           
           if(err) res.send(err);                 
-          dummyData=posts;                             
+          dummyData=posts;                                
       });      
 
       buildingType.find({}, function(err, data){                  
@@ -22,26 +22,29 @@ module.exports = {
       });        
   },
   create: function (req, res) {    
-   if(req.files.image.originalFilename) {   // check if files are uploaded... if yes upload to cloudinary..else redirect        
-         cloudinary.v2.uploader.upload(req.files.image.path,
-              { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
-              function(err, result) {                     
-                  var post = new Model({                  
-                      created_at: new Date(),
-                      image: result.url,
-                      image_id: result.public_id
-                  });
+     if(req.files.image.originalFilename) {   // check if files are uploaded... if yes upload to cloudinary..else redirect        
+           cloudinary.v2.uploader.upload(req.files.image.path,
+                { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
+                function(err, result) {                     
+                    var post = new Model({                  
+                        created_at: new Date(),
+                        image: result.url,
+                        image_id: result.public_id
+                    });
 
-                  post.save(function (err) {
-                      if(err){
-                          res.send(err)
-                      }
-                      res.redirect('/cloudinaryTest');
-                  });
-          });
-      }
-    else {
-      res.redirect('/cloudinaryTest');
-    };
+                    post.save(function (err) {
+                        if(err){
+                            res.send(err)
+                        }
+                        res.redirect('/cloudinaryTest');
+                    });
+            });
+        }
+      else {
+        res.redirect('/cloudinaryTest');
+      };
+   },
+   destory: function (req, res) {        
+      res.send(req.body.image_id);
    },
 };

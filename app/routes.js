@@ -46,8 +46,10 @@ module.exports = function(app) {
     });
 
     app.get('/cloudinaryTest',controller.index);
-
+    
     //---some post 
+    app.post('/Delete_img' , controller.destory);
+
     app.post('/create', multipartMiddleware, controller.create);
     
     app.post('/test',function(req,res){         
