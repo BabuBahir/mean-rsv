@@ -30,8 +30,11 @@
 	        mesg += "\nLatitude: " + latitude;
 	        mesg += "\nLongitude: " + longitude;
 
-	        var cityname =place.address_components[3]['long_name'];
-	        //alert(mesg);
+	        var citynameArr = place.vicinity.split(',');
+	        var cityname =citynameArr[citynameArr.length - 1];
+
+	        $('input[name="city"]').val(cityname);
+	        $('input[name="altitude"]').val(latitude);
 	    });
 	});
 	</script>
@@ -72,7 +75,7 @@
 					<div class="col-sm-6 col-md-6 col-lg-8">	
 					    
 					<!--	<div class="progress-bar"></div>
-						<div class="clearfix"></div>  --->
+						<div class="clearfix"></div>  -->
 					    
 						<form class="general-form-bg">
 						    <div class="row" style="margin:0">
@@ -101,33 +104,33 @@
 								<div class="col-sm-12 col-md-6">
 				                    <div class="form-group">
 									    <label><b>City <span style="color:#fb6969">*</span></b></label>
-                                        <input type="text" class="form-control" name="city" readonly placeholder="Building Name">
+                                        <input type="text" class="form-control" name="city" placeholder="Building Name">
                                     </div>
 								</div>
 								<div class="col-sm-12 col-md-6">
                                     <div class="form-group">
 									    <label><b>Local Authority <span style="color:#fb6969">*</span></b></label>
-                                        <input type="text" class="form-control" name="localAuthority" readonly placeholder="">
+                                        <input type="text" class="form-control" name="localAuthority" placeholder="">
                                     </div>
 								</div>
 								
 								<div class="col-sm-12 col-md-6">
 				                    <div class="form-group">
 									    <label><b>Altitude/Latitude <span style="color:#fb6969">*</span></b></label>
-                                        <input type="text" class="form-control" name="altitude" readonly placeholder="Altitude">
+                                        <input type="text" class="form-control" name="altitude" placeholder="Altitude">
                                     </div>
 								</div>
 								<div class="col-sm-12 col-md-6">
                                     <div class="form-group">
 									    <label><b>Earthquake Zone <span style="color:#fb6969">*</span></b></label>
-                                        <input type="text" class="form-control" name="earthquakeZone" readonly placeholder="">
+                                        <input type="text" class="form-control" name="earthquakeZone" placeholder="">
                                     </div>
 								</div>
 								
 								<div class="col-sm-12 col-md-6">
                                     <div class="form-group">
 									    <label><b>Soil Grade <span style="color:#fb6969">*</span></b></label>
-                                        <input type="text" class="form-control" name="soilGrade" readonly placeholder="">
+                                        <input type="text" class="form-control" name="soilGrade" placeholder="">
                                     </div>
 								</div>
 								<div class="clearfix"></div>

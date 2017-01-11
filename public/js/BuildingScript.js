@@ -10,6 +10,7 @@ angular.module('BuildingApp',[])
 		$http({
 		method : "POST",
 		url : "/test" ,
+		async : false,
 		data:({"NameEN":$scope.masonaryNameEN,"NameHI":$scope.masonaryNameHI,"NameGJ":$scope.masonaryNameGJ})
 		}).then(function mySucces(response) {
 
@@ -24,10 +25,11 @@ angular.module('BuildingApp',[])
 		$http({
 		method : "POST",
 		url : "/Delete_img" ,
+		async : false,
 		data:({"image_id":img_id})
 		}).then(function mySucces(response) {			 
 		   //$scope.myWelcome = response.data; 
-		   location.reload();
+		    document.getElementById(img_id).style.display = 'none';
 		}, function myError(response) {
 		  $scope.myWelcome = response.statusText;
 		});	 

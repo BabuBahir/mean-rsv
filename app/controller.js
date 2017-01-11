@@ -14,9 +14,7 @@ module.exports = {
   index: function (req, res) {
       Model.find({}, function (err, posts) {           
           if(err) res.send(err);                 
-          dummyData=posts;
-          console.log("-------------------");
-          console.log(dummyData);                                
+          dummyData=posts;                                           
       });      
 
       buildingType.find({}, function(err, data){                  

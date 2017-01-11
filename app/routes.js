@@ -39,8 +39,7 @@ module.exports = function(app) {
     app.get('/buildingType',function(req,res){
         var buildingType = require("../models/buildingType.js");
 
-        buildingType.find({}, function(err, data){            
-          console.log(data);        
+        buildingType.find({}, function(err, data){                           
           res.render('building_Type _Configuration',{drinks:data[0].name});                     
         });        
     });
