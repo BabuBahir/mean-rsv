@@ -12,6 +12,7 @@ angular.module('BuildingApp',[])
 		url : "/test" ,
 		data:({"NameEN":$scope.masonaryNameEN,"NameHI":$scope.masonaryNameHI,"NameGJ":$scope.masonaryNameGJ})
 		}).then(function mySucces(response) {
+
 		   //$scope.myWelcome = response.data;
 		}, function myError(response) {
 		  $scope.myWelcome = response.statusText;
@@ -19,13 +20,14 @@ angular.module('BuildingApp',[])
 	};
 
 	$scope.Delete_img = function(img_id){
-		alert(img_id);
+		alert("Delete the image "+img_id);
 		$http({
 		method : "POST",
 		url : "/Delete_img" ,
 		data:({"image_id":img_id})
 		}).then(function mySucces(response) {			 
-		   $scope.myWelcome = response.data;
+		   //$scope.myWelcome = response.data; 
+		   location.reload();
 		}, function myError(response) {
 		  $scope.myWelcome = response.statusText;
 		});	 

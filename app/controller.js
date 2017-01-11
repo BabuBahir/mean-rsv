@@ -14,7 +14,9 @@ module.exports = {
   index: function (req, res) {
       Model.find({}, function (err, posts) {           
           if(err) res.send(err);                 
-          dummyData=posts;                                
+          dummyData=posts;
+          console.log("-------------------");
+          console.log(dummyData);                                
       });      
 
       buildingType.find({}, function(err, data){                  
@@ -35,7 +37,7 @@ module.exports = {
                     post.save(function (err) {
                         if(err){
                             res.send(err)
-                        }
+                        }                          
                         res.redirect('/cloudinaryTest');
                     });
             });
@@ -44,7 +46,13 @@ module.exports = {
         res.redirect('/cloudinaryTest');
       };
    },
-   destory: function (req, res) {        
-      res.send(req.body.image_id);
+   destory: function (req, res) {               
+      var imageId = req.body.image_id;
+      cloudinary.v2.uploader.destroy(imageId, function (error, result) {
+              Model.findOneAndRemove({ image_id: imageId }, function(err) {
+                  if (err) res.send(err);
+                  res.redirect('/cloudinaryTest');
+              });
+          });
    },
 };
