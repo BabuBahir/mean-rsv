@@ -24,8 +24,7 @@ module.exports = {
   create: function (req, res) {     
      cloudinary.v2.uploader.upload(req.files.image.path,
           { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
-          function(err, result) {
-              console.log(result);
+          function(err, result) {               
               var post = new Model({                  
                   created_at: new Date(),
                   image: result.url,
