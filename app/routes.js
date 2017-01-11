@@ -68,7 +68,7 @@ module.exports = function(app) {
                  return err;
             }
             else {
-                console.log("Post saved");
+                //console.log("Post saved");
             }
         });
         res.send(req.body);
