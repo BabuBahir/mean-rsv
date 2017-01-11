@@ -45,7 +45,14 @@ module.exports = function(app) {
     });
 
     app.get('/cloudinaryTest',controller.index);
+
+    app.get('/general_techincal',function(req,res){
+        res.render('general_Technical_Information.html');
+    });
     
+    app.get('/seismic_Assessment',function(req,res){
+        res.render('seismic_Assessment.html');
+    });
     //---some post 
     app.post('/Delete_img' , controller.destory);
 

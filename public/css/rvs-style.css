@@ -450,6 +450,7 @@ footer i { vertical-align:-8px; }
     color: #fff;
     text-decoration: none;
     background-color: #f3810f;
+    border: 1px solid #f3810f;
     font-weight: 700;
     font-size:17px;
     display: block;
@@ -473,6 +474,7 @@ footer i { vertical-align:-8px; }
 
 .sky-blue-btn  {
    background-color: #6ba9ff;
+    border: 1px solid #6ba9ff;
    -webkit-box-shadow: 0px 8px 0px rgba(60,129,230,.9), 0px 9px 20px rgba(0,0,0,.8);
     -moz-box-shadow: 0px 8px 0px rgba(60,129,230,.9), 0px 9px 20px rgba(0,0,0,.8);
     box-shadow: 0px 8px 0px rgba(60,129,230,.9), 0px 9px 20px rgba(0,0,0,.8);
@@ -608,6 +610,7 @@ footer i { vertical-align:-8px; }
 }
 
 .progress-bar div span {
+  color: black;        /*11-january-2017  rohitas*/
   position: absolute;
   font-family: Arial;
   font-size: 25px;
@@ -763,6 +766,7 @@ toggle {  0% {
     color: #fff;
     text-decoration: none;
     background-color: #5cb85c;
+    border:1px solid #5cb85c;
     font-weight: 700;
     font-size:16px;
   display:inline-block;
@@ -814,6 +818,7 @@ toggle {  0% {
     color: #fff;
     text-decoration: none;
     background-color: #5cb85c;
+    border: 1px solid #5cb85c
     -webkit-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
     -moz-box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
     box-shadow: 0px 5px 0px rgba(93,176,22,.9), 0px 7px 15px rgba(0,0,0,.8);
@@ -1005,4 +1010,9 @@ toggle {  0% {
   height:70%; height:70vh; 
  }
 
+}
+
+/*added by -rohitas */
+.progress-bar{
+  background-color:transparent;
 }
