@@ -17,8 +17,8 @@ module.exports = {
           dummyData=posts;                                           
       });      
 
-      buildingType.find({}, function(err, data){                  
-        res.render('building_Type _coudinary',{drinks:data[0].name, posts:dummyData});                     
+      buildingType.find({}, function(err, data){                      
+        res.render('building_Type _coudinary',{drinks:data[0].name , desc:data[0].description , posts:dummyData});                     
       });        
   },
   create: function (req, res) {    

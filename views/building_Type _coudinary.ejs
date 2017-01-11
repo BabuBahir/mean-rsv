@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>Description <span style="color:#fb6969">*</span></b></label>
-                                                <textarea style="color:#b0b0b0" class="form-control" rows="3" name="description" placeholder="Type description">{{myWelcome}}</textarea>
+                                                <textarea id="enDesc" style="color:#b0b0b0" class="form-control" rows="3" ng-model="masonaryDescEN" name="description" value="<%=desc.English%>" placeholder="Type description">{{masonaryDescEN}}</textarea>
                                             </div>
                                         </form>
                                         <br/>
@@ -96,7 +96,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>વર્ણન <span style="color:#fb6969">*</span></b></label>
-                                                <textarea class="form-control" rows="3" name="description" placeholder="પ્રકાર વર્ણન"></textarea>
+                                                <textarea id="gjDesc" class="form-control" rows="3" name="description" placeholder="પ્રકાર વર્ણન" ng-model="masonaryDescGJ"> </textarea>
                                             </div>
                                         </form>
                                         <br/>                                                                                                       
@@ -114,7 +114,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>विवरण <span style="color:#fb6969">*</span></b></label>
-                                                <textarea class="form-control" rows="3" name="description" placeholder="प्रकार के विवरण"></textarea>
+                                                <textarea id="hiDesc" class="form-control" rows="3" name="description" placeholder="प्रकार के विवरण" ng-model="masonaryDescHI"></textarea>
                                             </div>
                                         </form>
                                         <br/>

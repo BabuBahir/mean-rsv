@@ -56,7 +56,7 @@ module.exports = function(app) {
 
         var testBuilding = new buildingType({
             name: {"Hindi":req.body["NameHI"],"English":req.body["NameEN"],"Gujarati":req.body["NameGJ"]},
-            description : {"Hindi":"Dxyz", "English":"Deng"} 
+            description : {"Hindi":req.body["DescHI"], "English":req.body["DescEN"] , "Gujarati" : req.body["DescGJ"]} 
         });
 
         //remove user
