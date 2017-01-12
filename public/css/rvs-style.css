@@ -1023,11 +1023,16 @@ toggle {  0% {
   }
 
 .progress-bar-text{
-    color: black;
+    color: #9b9b9b;
+    line-height: 1.3;
     position: absolute;
-    bottom: -35px;
+    bottom: -45px;
     width: 80%;
     left: 10%;
     font-size: 14px;
+}
+
+.input-text-first{ 
+ color:#b0b0b0;border-radius: 0;
 }
 /*added by -rohitas */
