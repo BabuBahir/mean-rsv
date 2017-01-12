@@ -12,7 +12,7 @@ var dummyData = "";var imgurlArray=[];
 
 module.exports = {
   index: function (req, res) {       
-      buildingType.find({type: "Masonry"}, function(err, data){                          
+      buildingType.find({_id: "Masonry"}, function(err, data){                          
         res.render('building_Type _coudinary',{drinks:data[0].name , desc:data[0].description , posts:data[0].buildingImgUrl});                     
       });        
   },
@@ -21,11 +21,11 @@ module.exports = {
            cloudinary.v2.uploader.upload(req.files.image_masonry.path,
                 { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
                 function(err, result) {        // call back after uploading to cloudinary                     
-                    buildingType.find({type: "Masonry"}, function(err, test){                                        
+                    buildingType.find({_id: "Masonry"}, function(err, test){                                        
                         if(err){res.send(err)};                   
                         test[0].buildingImgUrl.push({imgUrl:result.url,_id:result.public_id});
                         imgurlArray = test[0].buildingImgUrl;                                                          
-                        buildingType.findOneAndUpdate({type: "Masonry"}, { $set: { buildingImgUrl: imgurlArray}}, { new: true }, function (err, tank) {
+                        buildingType.findOneAndUpdate({_id: "Masonry"}, { $set: { buildingImgUrl: imgurlArray}}, { new: true }, function (err, tank) {
                         if (err) return handleError(err);                      
                         res.redirect('/cloudinaryTest');             
                         }); 
@@ -34,8 +34,7 @@ module.exports = {
             });
         } else if (req.files.image_masonry.originalFilename) {  // check if video is present
             cloudinary.uploader.upload_large(req.files.image_masonry.path, 
-            function(result) {
-              console.log(result); 
+            function(result) {               
                 result.url=(result.url).replace("mp4","jpg"); // replacing .mp4 by its .jpg
               var post = new Model({
                   title: req.body.title,                  
@@ -60,7 +59,7 @@ module.exports = {
    destory: function (req, res) {               
       var imageId = req.body.image_id;  
       cloudinary.v2.uploader.destroy(imageId, function (error, result) {   
-                buildingType.update({type: "Masonry"}, { $pull: { buildingImgUrl : { _id : imageId } } },{ safe: true }, function(err, test){                                        
+                buildingType.update({_id: "Masonry"}, { $pull: { buildingImgUrl : { _id : imageId } } },{ safe: true }, function(err, test){                                        
                         if(err){res.send(err)};                                            
                         res.send("done");
                   });

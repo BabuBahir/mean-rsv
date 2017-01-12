@@ -2,39 +2,11 @@
 <html lang=en>
 	<head>
 		<title>Seismic Assessment</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/rvs-style.css" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+		<% include ./partials/head %>
 	</head>
 	<body>
 	   <!-- nav bar starts here -->
-	    <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"></a>
-                </div>  <!--- navbar-header -->
-
-              <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="pull-left"><a href="#"><img src="./img/logo.png"></a></li>
-						<li><a href="#" class="project-name"><span id="rsv">RSV</span> RAPID SEISMIC VARIABILITY ASSESSMENT SURVEY</a></li>
-						<li class="pull-right menu-right-options"><a href="#">Log Out &nbsp;<i class="fa fa-sign-out"></i></a></li>
-						<li class="pull-right menu-right-options active"><a href="#"><i class="fa fa-user-circle"></i>&nbsp; My Account</a></li>
-						
-                    </ul>
-                </div><!-- navbar-collapse -->
-            </div><!-- container-fluid -->
-        </nav>
+	     <% include ./partials/header %>
 	  <!-- nav bar ends here -->
 	  
 	    <div class="container-fluid sign-up-bg_img">
@@ -67,8 +39,23 @@
 					
 					<div class="col-sm-6 col-md-6 col-lg-8">	
 					    
-					<!--	<div class="progress-bar"></div>
-						<div class="clearfix"></div>  -->
+					<!--progress bar wrapper-->		
+					  <div class="text-center">				  
+						 <div class="progress-bar progress-bar-custom"  data-percent="72" data-color="#ccc,#DC143C">
+						 	<span class="progress-bar-text">No Animation</span>
+						 </div>	 &nbsp;&nbsp;&nbsp;&nbsp;					  
+						 <div class="progress-bar progress-bar-custom"  data-percent="80" data-color="#ccc,#7FFF00">
+						 	<span class="progress-bar-text">Animation Progress</span>
+						 </div>	 &nbsp;&nbsp;&nbsp;&nbsp;					  	     
+					 	 <div class="progress-bar progress-bar-custom"  data-percent="90" data-color="#ccc,#6495ED">
+					 	 	<span class="progress-bar-text">Value Progress</span>
+					 	 </div>
+				 	 </div>  <!--text-center-->
+				 	 	<br/><br/>
+				 	  <!--progress bar wrapper-->
+						 <div class="clearfix"></div>
+						 &nbsp;
+					  <!--clearfix for progressbar-->
 					    
 						<form class="general-form-bg">
 						    <div class="row" style="margin:0">

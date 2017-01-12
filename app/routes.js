@@ -39,7 +39,7 @@ module.exports = function(app) {
     app.get('/buildingType',function(req,res){
         var buildingType = require("../models/buildingType.js");
 
-        buildingType.find({type: "Masonry"}, function(err, data){ 
+        buildingType.find({_id: "Masonry"}, function(err, data){ 
           console.log(data);
           res.render('building_Type _Configuration',{drinks:data[0].name});                     
         });        
@@ -65,10 +65,10 @@ module.exports = function(app) {
         var testBuilding = new buildingType({
             name: {"Hindi":req.body["NameHI"],"English":req.body["NameEN"],"Gujarati":req.body["NameGJ"]},
             description : {"Hindi":req.body["DescHI"], "English":req.body["DescEN"] , "Gujarati" : req.body["DescGJ"]},
-            type: "Masonry" 
+            _id: "Masonry" 
         });
 
-        buildingType.find({type: "Masonry"}, function(err, test){                                        
+        buildingType.find({_id: "Masonry"}, function(err, test){                                        
                         if(err){res.send(err)}; 
                         console.log(test);
                 });
