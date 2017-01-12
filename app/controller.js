@@ -12,8 +12,7 @@ var dummyData = "";var imgurlArray=[];
 
 module.exports = {
   index: function (req, res) {       
-      buildingType.find({type: "Masonry"}, function(err, data){     
-        console.log(data[0].buildingImgUrl);                 
+      buildingType.find({type: "Masonry"}, function(err, data){                          
         res.render('building_Type _coudinary',{drinks:data[0].name , desc:data[0].description , posts:data[0].buildingImgUrl});                     
       });        
   },
@@ -23,14 +22,13 @@ module.exports = {
                 { width: 300, height: 300, crop: "limit", tags: req.body.tags, moderation:'manual' },
                 function(err, result) {        // call back after uploading to cloudinary                     
                     buildingType.find({type: "Masonry"}, function(err, test){                                        
-                    if(err){res.send(err)};                   
-                    test[0].buildingImgUrl.push(result.url);
-                    imgurlArray = test[0].buildingImgUrl; 
-                     console.log(imgurlArray);                    
-                    buildingType.findOneAndUpdate({type: "Masonry"}, { $set: { buildingImgUrl: imgurlArray }}, { new: true }, function (err, tank) {
-                    if (err) return handleError(err);                      
-                      res.send(tank);                 
-                   }); 
+                        if(err){res.send(err)};                   
+                        test[0].buildingImgUrl.push({imgUrl:result.url,_id:result.public_id});
+                        imgurlArray = test[0].buildingImgUrl;                                                          
+                        buildingType.findOneAndUpdate({type: "Masonry"}, { $set: { buildingImgUrl: imgurlArray}}, { new: true }, function (err, tank) {
+                        if (err) return handleError(err);                      
+                        res.redirect('/cloudinaryTest');             
+                        }); 
                      
                   });
             });
@@ -60,12 +58,12 @@ module.exports = {
       };
    },
    destory: function (req, res) {               
-      var imageId = req.body.image_id;
-      cloudinary.v2.uploader.destroy(imageId, function (error, result) {
-              Model.findOneAndRemove({ image_id: imageId }, function(err) {
-                  if (err) res.send(err);
-                  res.redirect('/cloudinaryTest');
-              });
+      var imageId = req.body.image_id;  
+      cloudinary.v2.uploader.destroy(imageId, function (error, result) {   
+                buildingType.update({type: "Masonry"}, { $pull: { buildingImgUrl : { _id : imageId } } },{ safe: true }, function(err, test){                                        
+                        if(err){res.send(err)};                                            
+                        res.send("done");
+                  });
           });
    },
 };

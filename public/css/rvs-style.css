@@ -1016,3 +1016,18 @@ toggle {  0% {
 .progress-bar{
   background-color:transparent;
 }
+
+.progress-bar-custom{
+    display: inline-block;float: none !important;
+    box-shadow: none;
+  }
+
+.progress-bar-text{
+    color: black;
+    position: absolute;
+    bottom: -35px;
+    width: 80%;
+    left: 10%;
+    font-size: 14px;
+}
+/*added by -rohitas */

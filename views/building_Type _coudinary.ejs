@@ -135,14 +135,14 @@
                                                     </div>                                             
                                                     <div class="col-sm-9 col-md-10 col-lg-10 side-padding">
                                             <% posts.forEach(function(post, index) { %>
-                                                        <div id="<%=post.image_id%>" class="upload-files">
+                                                        <div id="<%=post._id%>" class="upload-files">
                                                             <div class="upload-wrapper">
-                                                                <img  src="<%=post%>" />
+                                                                <img  src="<%=post.imgUrl%>" />
                                                             </div> <!-- upload-wrapper -->
                                                                               
                                                            <!-- the below div will be visible on hover -->
                                                             <div class="upload-hover-wrapper">
-                                                                <span><i ng-click="Delete_img('<%=post.image_id%>')" class="fa fa-times"></i></span>
+                                                                <span><i ng-click="Delete_img('<%=post._id%>')" class="fa fa-times"></i></span>
                                                             </div> <!-- upload-hover-wrapper -->
                                                         </div>  <!-- upload-files -->
                                                          &nbsp;                                                                 <% }) %>                                 

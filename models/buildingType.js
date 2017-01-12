@@ -13,8 +13,8 @@ var BuildingSchema = new Schema({
         Gujarati: String
     },
     type : String,
-    buildingImgUrl:[String],
-    buildingVideoUrl: [String] 
+    buildingImgUrl:[{imgUrl: String, _id : String}],
+    buildingVideoUrl: [{videoUrl : String , _id : String}] 
 });
 
 module.exports  = mongoose.model('BuildingType', BuildingSchema);

@@ -68,11 +68,13 @@ module.exports = function(app) {
             type: "Masonry" 
         });
 
-        //remove user
-        /* buildingType.remove(function(err,removed) {             }); */
+        buildingType.find({type: "Masonry"}, function(err, test){                                        
+                        if(err){res.send(err)}; 
+                        console.log(test);
+                });
 
         // save user to database
-       /* testBuilding.save(function (err) {
+        /* testBuilding.save(function (err) {
             if (err) {
                  return err;
             }
