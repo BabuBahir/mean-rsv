@@ -5,8 +5,10 @@ angular.module('BuildingApp',[])
  	$scope.masonaryNameGJ =$document[0].getElementById('gjName').value;
  	$scope.masonaryNameEN =$document[0].getElementById('enName').value;
  	$scope.masonaryNameHI =$document[0].getElementById('hiName').value;
- 	$scope.masonaryDescEN =$document[0].getElementById('enDesc').value;
- 	console.log("$scope.masonaryDescEN");
+
+ 	$scope.masonaryDescEN =$document[0].getElementById('enDesc').value; 	 
+ 	$scope.masonaryDescGJ =$document[0].getElementById('gjDesc').value; 	 
+ 	$scope.masonaryDescHI =$document[0].getElementById('hiDesc').value; 	 
 
 	$scope.form_validate =function(){	    	 
 		$http({

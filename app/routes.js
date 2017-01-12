@@ -39,7 +39,8 @@ module.exports = function(app) {
     app.get('/buildingType',function(req,res){
         var buildingType = require("../models/buildingType.js");
 
-        buildingType.find({}, function(err, data){                           
+        buildingType.find({type: "Masonry"}, function(err, data){ 
+          console.log(data);
           res.render('building_Type _Configuration',{drinks:data[0].name});                     
         });        
     });
@@ -63,22 +64,22 @@ module.exports = function(app) {
 
         var testBuilding = new buildingType({
             name: {"Hindi":req.body["NameHI"],"English":req.body["NameEN"],"Gujarati":req.body["NameGJ"]},
-            description : {"Hindi":req.body["DescHI"], "English":req.body["DescEN"] , "Gujarati" : req.body["DescGJ"]} 
+            description : {"Hindi":req.body["DescHI"], "English":req.body["DescEN"] , "Gujarati" : req.body["DescGJ"]},
+            type: "Masonry" 
         });
 
         //remove user
-        buildingType.remove(function(err,removed) {             
-        });
+        /* buildingType.remove(function(err,removed) {             }); */
 
         // save user to database
-        testBuilding.save(function (err) {
+       /* testBuilding.save(function (err) {
             if (err) {
                  return err;
             }
             else {
                 //console.log("Post saved");
             }
-        });
+        }); */
         res.send(req.body);
     });
 

@@ -75,7 +75,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>Description <span style="color:#fb6969">*</span></b></label>
-                                                <textarea id="enDesc" style="color:#b0b0b0" class="form-control" rows="3" ng-model="masonaryDescEN" name="description" value="<%=desc.English%>" placeholder="Type description">{{masonaryDescEN}}</textarea>
+                                                <textarea id="enDesc" style="color:#b0b0b0" class="form-control" rows="3" ng-model="masonaryDescEN" name="description"   placeholder="Type description"><%=desc.English%></textarea>
                                             </div>
                                         </form>
                                         <br/>
@@ -96,7 +96,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>વર્ણન <span style="color:#fb6969">*</span></b></label>
-                                                <textarea id="gjDesc" class="form-control" rows="3" name="description" placeholder="પ્રકાર વર્ણન" ng-model="masonaryDescGJ"> </textarea>
+                                                <textarea id="gjDesc" class="form-control" rows="3" name="description" placeholder="પ્રકાર વર્ણન" ng-model="masonaryDescGJ"><%=desc.Gujarati%></textarea>
                                             </div>
                                         </form>
                                         <br/>                                                                                                       
@@ -114,7 +114,7 @@
                                             </div>
                                             <div class="form-group col-sm-12">
                                                 <label><b>विवरण <span style="color:#fb6969">*</span></b></label>
-                                                <textarea id="hiDesc" class="form-control" rows="3" name="description" placeholder="प्रकार के विवरण" ng-model="masonaryDescHI"></textarea>
+                                                <textarea id="hiDesc" class="form-control" rows="3" name="description" placeholder="प्रकार के विवरण" ng-model="masonaryDescHI"><%=desc.Hindi%></textarea>
                                             </div>
                                         </form>
                                         <br/>
@@ -132,13 +132,12 @@
                                                    <!-- upload video part starts --> 
                                                     <div class="col-sm-3 col-md-2 col-lg-2 side-padding">
                                                         <label style="margin-top:15px;">Upload Image</label> <br/>
-                                                    </div>
-                                            
+                                                    </div>                                             
                                                     <div class="col-sm-9 col-md-10 col-lg-10 side-padding">
                                             <% posts.forEach(function(post, index) { %>
                                                         <div id="<%=post.image_id%>" class="upload-files">
                                                             <div class="upload-wrapper">
-                                                                <img  src="<%=post.image%>" />
+                                                                <img  src="<%=post%>" />
                                                             </div> <!-- upload-wrapper -->
                                                                               
                                                            <!-- the below div will be visible on hover -->
@@ -150,7 +149,7 @@
                                                            <div class="upload-files" style="vertical-align:-5px;">
                                                             <div class="upload-wrapper">
                                                                 <label class="" for="my-file-selector">
-                                                                   <input id="my-file-selector" name="image" type="file" style="display:none;">
+                                                                   <input id="my-file-selector" name="image_masonry" type="file" style="display:none;">
                                                                   <i class="fa fa-plus"></i>
                                                                 </label>
                                                             </div> <!-- upload-wrapper -->
@@ -215,7 +214,7 @@
                                                         <div class="upload-files" style="vertical-align:-5px;">
                                                             <div class="upload-wrapper">
                                                                 <label class="" for="my-file-selector">
-                                                                   <input id="my-file-selector" type="file" style="display:none;">
+                                                                   <input id="my-video-selector" name="video_masonry" type="file" style="display:none;">
                                                                   <i class="fa fa-plus"></i>
                                                                 </label>
                                                             </div> <!-- upload-wrapper -->
