@@ -23,11 +23,7 @@ module.exports = function(app) {
     app.get('/history', function(req, res) {
         res.render('5)survey_History.html');
     });
-
-    app.get('/newsurvey', function(req, res) {
-        res.render('select.html');
-    });
-
+  
     app.get('/addpicture', function(req, res) {
         res.render('add_Picture.html');
     });
@@ -35,17 +31,9 @@ module.exports = function(app) {
     app.get('/showform', function(req, res) {
         res.render('general_Info-Form.html');
     });
+ 
 
-    app.get('/buildingType',function(req,res){
-        var buildingType = require("../models/buildingType.js");
-
-        buildingType.find({_id: "Masonry"}, function(err, data){ 
-          console.log(data);
-          res.render('building_Type _Configuration',{drinks:data[0].name});                     
-        });        
-    });
-
-    app.get('/cloudinaryTest',controller.index);
+    app.get('/newsurvey',controller.index);
 
     app.get('/general_techincal',function(req,res){
         res.render('general_Technical_Information.html');
@@ -55,35 +43,7 @@ module.exports = function(app) {
         res.render('seismic_Assessment.html');
     });
     //---some post 
-    app.post('/Delete_img' , controller.destory);
-
-    app.post('/create', multipartMiddleware, controller.create);
-    
-    app.post('/test',function(req,res){         
-        var buildingType = require("../models/buildingType.js");
-
-        var testBuilding = new buildingType({
-            name: {"Hindi":req.body["NameHI"],"English":req.body["NameEN"],"Gujarati":req.body["NameGJ"]},
-            description : {"Hindi":req.body["DescHI"], "English":req.body["DescEN"] , "Gujarati" : req.body["DescGJ"]},
-            _id: "Masonry" 
-        });
-
-        buildingType.find({_id: "Masonry"}, function(err, test){                                        
-                        if(err){res.send(err)}; 
-                        console.log(test);
-                });
-
-        // save user to database
-        /* testBuilding.save(function (err) {
-            if (err) {
-                 return err;
-            }
-            else {
-                //console.log("Post saved");
-            }
-        }); */
-        res.send(req.body);
-    });
+      
 
     app.post('/login', function(req, res) {
         sess = req.session;

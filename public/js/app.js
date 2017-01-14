@@ -5,7 +5,7 @@ angular.module('website', ['ngAnimate', 'ngTouch'])
 $scope.call_slider= function(msg){  
 	    $scope.currentIndex =0; //.. initiazlizing to zero 
 		$scope.currentVideoIndex =0;//
-	        var fruits = [];
+        var fruits = [];
 		var reserveFruit =[];
 		var videoList=[];
 		$scope.showDiv = true;
@@ -13,10 +13,10 @@ $scope.call_slider= function(msg){
 		$scope.reserveData = null; 
 		$scope.data = null;
 		$scope.img_still_click = false;
-                $scope.postImgClick =false;
-                $scope.preClick =false;
+        $scope.postImgClick =false;
+        $scope.preClick =false;
 		$scope.vidDiv = false;  
-                $scope.postVideoClick =false; // hide video div on every click on read more
+        $scope.postVideoClick =false; // hide video div on every click on read more
 		
 	//on click get data from json	
 	$http.get('json/data.json').success(function(data) {
